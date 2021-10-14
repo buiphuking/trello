@@ -1,0 +1,15 @@
+@import "_setting.scss";
+li.card-item {
+  background-color: white;
+  padding: $gap;
+  &:not(:last-child) {
+    margin-bottom: $gap;
+  }
+}
+img.card-cover {
+  display: block;
+  width: calc(100% + 2 * #{$gap});
+  margin: -$gap 0 $gap (-$gap);
+  border-top-left-radius: $card-border-radius;
+  border-top-right-radius: $card-border-radius;
+}
