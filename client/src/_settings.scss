@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600");
+
+$gap: 10px;
+
+$navbar-app-height: 4vh;
+$navbar-board-height: 5vh;
+$board-content-height: calc(
+  99vh - (#{$navbar-board-height} + #{$navbar-app-height})
+);
+
+$common-elm-bg: rgba(255, 255, 255, 0.24);
+
+// Colors
+$app-main-text-color: #333;
+$board-bg-color: #0079bf;
+
+// Screens
+$screen-lg: 1201px;
+$screen-md: 992px;
+$screen-sm: 768px;
+
+$screen-phone: 480px;
+$screen-ip6-down: "(max-width: 375px)";
+
+// radius
+$column-border-radius: 5px;

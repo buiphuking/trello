@@ -1,19 +1,28 @@
-@import './_setting.scss';
-
+@import "_settings.scss";
 
 body {
   margin: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0;
+
+  font-family: "Source Open Sans Pro", sans-serif;
   font-size: 14px;
   line-height: 1.3em;
+
+  .master {
+    width: 100%;
+  }
 }
 
-.trello-trungquandev-master{
+.master {
   height: 100vh;
-  display: grid;
-  grid-template-rows: 40px 50px 1fr;
+  line-height: 1.3em;
+  overflow-y: hidden;
   background-color: $board-bg-color;
-  
-   
-  
+
+  color: $app-main-text-color;
+
+  .icon {
+    font-size: 14px;
+    margin-right: 3px;
+  }
 }

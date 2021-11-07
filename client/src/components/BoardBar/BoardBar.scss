@@ -1,8 +1,12 @@
-@import "_setting.scss";
+@import "_settings.scss";
+
 .navbar-board {
-  padding-left: $gap;
   display: flex;
   align-items: center;
-  background-color: $board-bg-color;
+
+  padding-left: $gap;
+  height: $navbar-board-height;
+
   font-size: 1.1rem;
+  background-color: $board-bg-color;
 }
