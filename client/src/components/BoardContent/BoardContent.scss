@@ -1,18 +1,55 @@
-@import '_setting.scss';
+@import "_settings.scss";
 
-.board-content{
-    display: flex;
-    margin: 0 $gap $gap;
-    overflow-x: auto;
-    &::-webkit-scrollbar{
-      -webkit-appearance: none;
-    }
-    &::-webkit-scrollbar:horizontal{
-      height:11px;
-    }
-    &::-webkit-scrollbar-thumb{
-      background-color: $common-element-bg;
-      border-radius: 8px;
-    }
-   
+.board-content {
+  display: flex;
+  margin: 0 $gap;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: #0079bf;
+  height: $board-content-height;
+
+  & .column:not(:last-child) {
+    margin-right: $gap;
   }
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 11px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: $common-elm-bg;
+  }
+
+  .column-drop-preview {
+    background-color: rgba(150, 150, 200, 0.1);
+    border: 1px dashed #abc;
+    margin: 5px 5px 5px (0);
+  }
+
+  .add-new-column {
+    width: 250px;
+    height: 32px;
+    line-height: 32px;
+
+    padding: 4px 0 4px 15px;
+
+    color: #fff;
+    font-size: 15px;
+
+    background-color: hsla(0, 0%, 100%, 0.24);
+    cursor: pointer;
+
+    border-radius: $column-border-radius;
+
+    transition: background-color 0.2s ease-in;
+
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 0.14);
+    }
+  }
+}

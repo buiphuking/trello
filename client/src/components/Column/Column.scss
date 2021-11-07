@@ -1,48 +1,99 @@
-@import "_setting.scss";
+@import "_settings.scss";
+
+$list-bg-color: #ebecf0;
+$column-header-height: 36px;
+$column-footer-height: 36px;
 
 .column {
-  flex: 0 0 auto;
   width: 300px;
   height: calc(100% - #{$gap});
-  &:not(:first-child) {
-    margin-left: $gap;
-  }
+
+  margin-right: $gap;
+
+  overflow-y: auto;
+  height: $board-content-height;
+
   > * {
-    background-color: $list-bg-color;
-    color: #333;
     padding: 0 8px;
+    background-color: $list-bg-color;
   }
+
   header {
-    padding-left: 15px;
     height: $column-header-height;
     line-height: $column-header-height;
+
     font-size: 16px;
     font-weight: bold;
+    padding-left: 15px;
+
     border-top-left-radius: $column-border-radius;
     border-top-right-radius: $column-border-radius;
   }
+
+  header.column-drag-handle {
+    cursor: pointer;
+  }
+
   footer {
-    padding-left: 15px;
     height: $column-footer-height;
     line-height: $column-footer-height;
-    font-size: 16px;
-    font-weight: bold;
+
+    font-size: 14px;
+    padding-left: 10px;
+
     border-bottom-left-radius: $column-border-radius;
     border-bottom-right-radius: $column-border-radius;
+
+    color: #888;
+
+    .footer-actions {
+      cursor: pointer;
+      margin-left: $gap;
+
+      &:hover {
+        color: $app-main-text-color;
+      }
+    }
   }
-  ul.card-list {
-    list-style-type: none;
+
+  .card-list {
     margin: 0;
+
     max-height: calc(
-      100% - #{$column-header-height} - #{$column-footer-height}
+      100% - #{$gap} - #{$column-footer-height} - #{$column-header-height}
     );
-    overflow-y: auto;
+    overflow: auto;
+
     &::-webkit-scrollbar {
       -webkit-appearance: none;
     }
-    &::-webkit-scrollbar-thumb {
-      background-color: darken($list-bg-color, 15);
-      border-right: 5px $list-bg-color solid;
+
+    &::-webkit-scrollbar:vertical {
+      width: 11px;
     }
+    &::-webkit-scrollbar-thumb {
+      border-right: 5px solid $list-bg-color;
+      background-color: darken($list-bg-color, 15);
+    }
+  }
+
+  .card-ghost {
+    transition: transform 0.18s ease, font-weight 0.18s;
+    transform: rotateZ(5deg);
+
+    font-weight: bold;
+  }
+
+  .card-ghost-drop {
+    transform: rotateZ(0deg);
+    transition: transform 0.18s ease-in-out, font-weight 0.18s;
+
+    font-weight: bold;
+  }
+
+  .cards-drop-preview {
+    border: 1px dashed #abc;
+    border-radius: $column-border-radius;
+    background-color: rgba(150, 150, 200, 0.1);
   }
 }

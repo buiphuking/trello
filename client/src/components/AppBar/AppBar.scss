@@ -1,8 +1,14 @@
-@import '_setting.scss';
-.navbar-app{
-    padding-left: $gap;
-    display: flex;
-    align-items: center;
-    background-color: $appbar-bg-color;
-    font-size: 1.5rem;
-  }
+@import "_settings.scss";
+
+$appbar-bg-color: #0067a3;
+
+.navbar-app {
+  display: flex;
+  align-items: center;
+
+  height: $navbar-app-height;
+
+  font-size: 1.5rem;
+  padding-left: $gap;
+  background-color: $appbar-bg-color;
+}
