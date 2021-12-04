@@ -80,18 +80,16 @@ $column-footer-height: 36px;
   .card-ghost {
     transition: transform 0.18s ease, font-weight 0.18s;
     transform: rotateZ(5deg);
-
     font-weight: bold;
   }
 
   .card-ghost-drop {
     transform: rotateZ(0deg);
     transition: transform 0.18s ease-in-out, font-weight 0.18s;
-
     font-weight: bold;
   }
 
-  .cards-drop-preview {
+  .card-drop-preview {
     border: 1px dashed #abc;
     border-radius: $column-border-radius;
     background-color: rgba(150, 150, 200, 0.1);
